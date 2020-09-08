@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <h1 class="text-2xl text-center py-4 bg-gray-900 text-white">Settings</h1>
+    <div class="flex flex-col w-2/4 mx-auto mt-4">
+      <label for="github-token" class="text-black mb-1">GitHub Token</label>
+      <input class="block border appearance-none border-gray-300 p-2 rounded-lg focus:outline-none focus:shadow-outline" id="github-token" name="github_token" type="password" >
+      <a class="text-blue-600 text-sm hover:underline mr-auto" href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token" target="_blank">How to create an GitHub token.</a>
+
+      <label class="mt-4">GitHub Link Theme</label>
+      <div class="flex flex-row">
+        <input class="" type="radio" value="light" name="github_link_theme" id="github-link-light" checked/>
+        <label class="text-black ml-1 px-1" for="github-link-light">light</label>
+
+        <input class="ml-4" type="radio" value="dark" name="github_link_theme" id="github-link-dark"/>
+        <label class="text-black ml-1 px-1" for="github-link-dark">dark</label>
+      </div>
+
+      <button id="btn-save" class="font-bold ml-auto mt-4 py-2 px-4 bg-green-500 hover:bg-green-700 text-white rounded w-24">Save</button>
+    </div>
+
+    <template id="tmpl-success-message">
+      <div id="msg-success" class="absolute right-0 top-0 mt-4 mr-4 px-4 py-3 bg-green-100 border border-green-400 text-green-700 rounded" role="alert">
+        <span class="block sm:inline mr-12"></span>
+      </div>
+    </template>
+
+    <template id="tmpl-error-message">
+      <div class="absolute right-0 top-0 mt-4 mr-4 px-4 py-3 bg-red-100 border border-red-400 text-red-700 rounded" role="alert">
+        <span class="block sm:inline mr-12"></span>
+      </div>
+    </template>
+
+    <script src="./options.ts"></script>
+  </body>
+</html>

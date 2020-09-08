@@ -1,0 +1,40 @@
+{
+  "name": "chatwork-github-extension",
+  "version": "0.1.0",
+  "description": "Browser extension to integrate Chatwork with GitHub.",
+  "scripts": {
+    "clean:firefox": "rm -fr dist/firefox/*",
+    "clean:chrome": "rm -fr dist/chrome/*",
+    "parcel:firefox": "parcel build --no-cache --no-source-maps --experimental-scope-hoisting --public-url ./ -d dist/firefox src/contentScript.ts src/**/*.html src/style.css src/images/GitHub-Mark*-64px.png src/images/cwghe-icon-48.png src/images/cwghe-icon-96.png",
+    "parcel:chrome:base": "parcel build --no-cache --no-source-maps --experimental-scope-hoisting --public-url ./ -d dist/chrome src/contentScript.ts src/*.html src/style.css src/images/GitHub-Mark*-64px.png src/images/cwghe-icon-48.png src/images/cwghe-icon-96.png src/images/cwghe-icon-128.png",
+    "parcel:chrome:background": "parcel build --no-cache --no-source-maps --experimental-scope-hoisting --public-url ./ -d dist/chrome src/chrome/background.ts",
+    "parcel:chrome": "npm-run-all parcel:chrome:*",
+    "copy:firefox": "cp manifests/manifest.firefox.json dist/firefox/manifest.json",
+    "copy:chrome": "cp manifests/manifest.chrome.json dist/chrome/manifest.json",
+    "webext:firefox": "web-ext build --source-dir dist/firefox --overwrite-dest --artifacts-dir web-ext-artifacts/firefox",
+    "webext:chrome": "web-ext build --source-dir dist/chrome --overwrite-dest --artifacts-dir web-ext-artifacts/chrome",
+    "build:firefox": "npm-run-all clean:firefox parcel:firefox copy:firefox webext:firefox",
+    "build:chrome": "npm-run-all clean:chrome parcel:chrome copy:chrome webext:chrome",
+    "build": "npm-run-all build:*"
+  },
+  "author": "KITAGAWA Yasutaka <kit494way@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "0.0.122",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^3.10.1",
+    "eslint": "^7.7.0",
+    "eslint-config-prettier": "^6.11.0",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.1.1",
+    "tailwindcss": "^1.8.2",
+    "typescript": "^4.0.2",
+    "web-ext": "^5.0.0",
+    "webextension-polyfill-ts": "^0.19.0"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.1.4",
+    "graphql": "^15.3.0"
+  }
+}

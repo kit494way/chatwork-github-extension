@@ -1,0 +1,12 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/**
+ * This rule is to avoid breaking the style of reaction icons on www.chatowrk.com.
+ */
+div[data-reactiontype] {
+  height: 26px !important;
+}
