@@ -41,3 +41,10 @@ Chatwork の設定でリンクプレビューが有効になっている必要�
 <img src="images/after-light.png" width="640" >
 
 <img src="images/after-dark.png" width="640" >
+
+## ビルド
+
+```sh
+$ npm install
+$ npm run build
+```

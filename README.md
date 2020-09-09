@@ -40,3 +40,10 @@ Link preview is enabled by default.
 <img src="images/after-light.png" width="640" >
 
 <img src="images/after-dark.png" width="640" >
+
+## Build
+
+```sh
+$ npm install
+$ npm run build
+```
