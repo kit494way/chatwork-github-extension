@@ -44,6 +44,8 @@ Chatwork の設定でリンクプレビューが有効になっている必要�
 
 ## ビルド
 
+ビルドスクリプトは linux または unix で動作し、Node.js 14.x 以上が必要。
+
 ```sh
 $ npm install
 $ npm run build

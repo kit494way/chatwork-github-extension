@@ -43,6 +43,8 @@ Link preview is enabled by default.
 
 ## Build
 
+Build scripts works on linux or unix, and requires Node.js >= 14.x.
+
 ```sh
 $ npm install
 $ npm run build
