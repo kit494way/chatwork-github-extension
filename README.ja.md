@@ -5,6 +5,11 @@
 Chatwork を GitHub と連携するブラウザ拡張。
 この拡張は www.chatwork.com で動作します。
 
+## インストール
+
+- [Chrome](https://chrome.google.com/webstore/detail/chatwork-github-extension/fmldllboekjkfejdlpmdbdkdkoifobjb?hl=ja)
+- [Firefox](https://addons.mozilla.org/ja/firefox/addon/chatwork-github-extension/)
+
 ## 設定
 
 拡張機能をインストールした後、GitHub パーソナルアクセストークンを設定する必要があります。

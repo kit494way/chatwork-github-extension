@@ -5,6 +5,11 @@
 This is a browser extension to integrate Chatwork with GitHub.
 This extension works on www.chatwork.com.
 
+## Install
+
+- [Chrome](https://chrome.google.com/webstore/detail/chatwork-github-extension/fmldllboekjkfejdlpmdbdkdkoifobjb?hl=ja)
+- [Firefox](https://addons.mozilla.org/ja/firefox/addon/chatwork-github-extension/)
+
 ## Usage
 
 After install this extension, you must set GitHub personal access token.
