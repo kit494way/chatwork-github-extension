@@ -1,7 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Chatwork GitHub Extension",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "version_name": "0.1.1 beta",
   "description": "Browser extension to integrate Chatwork with GitHub.",
   "icons": {
     "48": "images/cwghe-icon-48.png",
