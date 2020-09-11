@@ -98,10 +98,10 @@ const createCreateLink = (templates: Document, templateId: string) => {
   const template = templates.getElementById(templateId) as HTMLTemplateElement;
   const logoSrc = templateId == 'github-link-light' ? ghLogo64Light : ghLogo64;
 
-  return (issue: Issue|PullRequest) => {
+  return (issue: Issue|PullRequest, url?: string) => {
     const clone = document.importNode(template.content, true);
     const anchor = clone.querySelector('a') as HTMLAnchorElement;
-    anchor.href = issue.url;
+    anchor.href = url || issue.url;
     const logo = clone.querySelector('img') as HTMLImageElement;
     logo.src = logoSrc;
     const title = clone.querySelector('.cwghe-title') as HTMLSpanElement;
@@ -160,7 +160,7 @@ const init = async (): Promise<void> => {
             const parentElem = elem.parentElement;
 
             queryIssue(client, owner, repo, +num).then(async (issue: Issue) => {
-              const node = createLink(issue);
+              const node = createLink(issue, elem.href);
               parentElem?.insertBefore(node, elem);
             });
           } else if (resource == 'pull') {
@@ -168,7 +168,7 @@ const init = async (): Promise<void> => {
             const parentElem = elem.parentElement;
 
             queryPullRequest(client, owner, repo, +num).then(async (pullRequest: PullRequest) => {
-              const node = createLink(pullRequest);
+              const node = createLink(pullRequest, elem.href);
               parentElem?.insertBefore(node, elem);
             });
           }
